@@ -1,0 +1,17 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    height: 60px;
+    font-size: 20px;
+}
