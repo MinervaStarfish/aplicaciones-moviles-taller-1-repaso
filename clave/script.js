@@ -24,7 +24,7 @@ function validar() {
 
     if (password === "1234") {
 
-        alert("Bienvenido");
+        alert("Bienvenido a Banco Mariana");
 
     } else {
 
