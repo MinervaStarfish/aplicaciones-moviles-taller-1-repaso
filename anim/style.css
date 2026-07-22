@@ -1,0 +1,98 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI;
+
+}
+
+body {
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(135deg, #004aad, #00a8ff);
+
+}
+
+.contenedor {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
+
+    width: 420px;
+
+}
+
+#tarjeta {
+
+    width: 250px;
+
+    height: 150px;
+
+    background: linear-gradient(135deg, #003366, #0059b3);
+
+    margin: 40px auto;
+
+    border-radius: 20px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 40px;
+
+}
+
+#tarjeta h2 {
+
+    font-size: 20px;
+
+    margin-top: 10px;
+
+}
+
+button {
+
+    padding: 15px 35px;
+
+    background: #003366;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    background: #0059b3;
+
+}
