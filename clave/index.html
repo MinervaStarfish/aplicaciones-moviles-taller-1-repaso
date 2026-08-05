@@ -2,50 +2,36 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Banco Virtual</title>
-
+    <title>Clave "Bancumbia"</title>
+    <!-- Vincula el CSS en la misma carpeta -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
+    <section class="caja_clave">
+        <!-- 'readonly' evita que escriban con el teclado físico -->
+        <input type="password" placeholder="Clave acá" class="clave" readonly>
 
-    <div class="login">
+        <section id="teclado">
+            <input type="button" value="1" class="tecla">
+            <input type="button" value="2" class="tecla">
+            <input type="button" value="3" class="tecla">
+            <input type="button" value="4" class="tecla">
+            <input type="button" value="5" class="tecla">
+            <input type="button" value="6" class="tecla">
+            <input type="button" value="7" class="tecla">
+            <input type="button" value="8" class="tecla">
+            <input type="button" value="9" class="tecla">
+            <input type="button" value="0" class="tecla">
+            <input type="button" value="Borrar" class="tecla borrar">
+            <input type="button" value="Confirmar" class="tecla confirmar">
+        </section>
+    </section>
 
-        <h1>🏦 Banco Mariana</h1>
-
-        <p>Ingrese su clave</p>
-
-        <input type="password" id="clave" maxlength="4" readonly>
-
-        <div class="teclado">
-
-            <button onclick="agregar(1)">1</button>
-            <button onclick="agregar(2)">2</button>
-            <button onclick="agregar(3)">3</button>
-
-            <button onclick="agregar(4)">4</button>
-            <button onclick="agregar(5)">5</button>
-            <button onclick="agregar(6)">6</button>
-
-            <button onclick="agregar(7)">7</button>
-            <button onclick="agregar(8)">8</button>
-            <button onclick="agregar(9)">9</button>
-
-            <button onclick="borrar()">⌫</button>
-            <button onclick="agregar(0)">0</button>
-            <button onclick="validar()">✔</button>
-
-        </div>
-
-    </div>
-
+    <!-- Vincula el JS en la misma carpeta -->
     <script src="script.js"></script>
-
 </body>
 
 </html>

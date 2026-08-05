@@ -1,95 +1,46 @@
-* {
-    margin: 0;
-    padding: 0;
+#teclado {
+    border: 1px solid grey;
+    width: 200px;
+    height: 340px;
+    text-align: center;
+}
+
+.clave {
+    width: 202px;
+    height: 40px;
+    padding-left: 10px;
     box-sizing: border-box;
-    font-family: Segoe UI;
 }
 
-body {
-
-    background: linear-gradient(135deg, #003366, #1e90ff);
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.login {
-
-    background: white;
-
-    padding: 40px;
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    width: 350px;
-
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
-
-}
-
-h1 {
-
-    margin-bottom: 20px;
-    color: #003366;
-
-}
-
-input {
-
-    width: 180px;
-    height: 50px;
-
-    font-size: 25px;
-
-    text-align: center;
-
-    margin: 20px 0;
-
-    border-radius: 10px;
-
-    border: 2px solid #003366;
-
-}
-
-.teclado {
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 80px);
-
-    gap: 10px;
-
-    justify-content: center;
-
-}
-
-button {
-
-    height: 60px;
-
-    font-size: 22px;
-
-    background: #003366;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 10px;
-
+.tecla {
     cursor: pointer;
-
-    transition: .3s;
-
+    width: 60px;
+    height: 60px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
 }
 
-button:hover {
+/* Efecto: oculta el número de las teclas (excepto borrar y confirmar) al pasar el cursor */
+.tecla:not(.borrar):not(.confirmar):hover {
+    color: transparent;
+}
 
-    background: #0059b3;
+.borrar {
+    width: 125px;
+}
 
+.caja_clave {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.confirmar {
+    width: 125px;
+    background: green;
+    margin-top: 5px;
+    color: white;
+    /* Color blanco para que se lea mejor */
 }
