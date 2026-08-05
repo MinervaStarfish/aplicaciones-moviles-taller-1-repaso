@@ -1,0 +1,46 @@
+#teclado {
+    border: 1px solid grey;
+    width: 200px;
+    height: 340px;
+    text-align: center;
+}
+
+.clave {
+    width: 202px;
+    height: 40px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.tecla {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+/* Efecto: oculta el número de las teclas (excepto borrar y confirmar) al pasar el cursor */
+.tecla:not(.borrar):not(.confirmar):hover {
+    color: transparent;
+}
+
+.borrar {
+    width: 125px;
+}
+
+.caja_clave {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.confirmar {
+    width: 125px;
+    background: green;
+    margin-top: 5px;
+    color: white;
+    /* Color blanco para que se lea mejor */
+}

@@ -1,0 +1,139 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Segoe UI;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+nav {
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background: #003366;
+
+    color: white;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+
+}
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+}
+
+nav ul {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+nav a:hover {
+
+    color: #ffd54f;
+
+}
+
+section {
+
+    height: 100vh;
+
+    padding: 130px 80px;
+
+}
+
+#inicio {
+
+    background: #dbeafe;
+
+}
+
+#cuentas {
+
+    background: #e8f5e9;
+
+}
+
+#pagos {
+
+    background: #fff8e1;
+
+}
+
+#transferencias {
+
+    background: #f3e5f5;
+
+}
+
+#perfil {
+
+    background: #eceff1;
+
+}
+
+.card {
+
+    background: white;
+
+    width: 350px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-top: 30px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+
+}
+
+h1 {
+
+    margin-bottom: 20px;
+
+    color: #003366;
+
+}

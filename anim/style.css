@@ -1,0 +1,152 @@
+body {
+    background-color: lightblue;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#paisaje {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 1px solid gray;
+    background: linear-gradient(to bottom, #00BFFF, #87CEEB);
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.objeto {
+    position: absolute;
+}
+
+#sol {
+    top: 45px;
+    right: 70px;
+    animation: girarSol 20s linear infinite;
+}
+
+#nevado {
+    bottom: -17px;
+    left: -17px;
+}
+
+#nevado2 {
+    bottom: -17px;
+    right: -30px;
+}
+
+#bici {
+    bottom: 10px;
+    left: -100px;
+    z-index: 1;
+    animation: moverBici 15s linear infinite;
+}
+
+#arbol {
+    right: 80px;
+    bottom: -4px;
+    z-index: 2;
+    animation: balancearArbol 3s ease-in-out infinite alternate;
+}
+
+#nube {
+    top: 50px;
+    left: -150px;
+    animation: moverNube 25s linear infinite;
+}
+
+
+@keyframes girarSol {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moverBici {
+    0% {
+        left: -100px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes balancearArbol {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes moverNube {
+    0% {
+        left: -150px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Contenedor de texto */
+.texto-container {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#contador {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: #555;
+}
+
+#botonSonido {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.descripcion {
+    text-align: center;
+    color: #555;
+    margin-top: 20px;
+    max-width: 800px;
+}
