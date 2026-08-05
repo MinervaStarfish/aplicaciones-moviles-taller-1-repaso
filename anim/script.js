@@ -1,18 +1,56 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const botonSonido = document.getElementById('botonSonido');
-    const sonidoAmbiente = document.getElementById('sonidoAmbiente');
+document.addEventListener("DOMContentLoaded", () => {
 
-    let sonidoActivo = false;
-
-    botonSonido.addEventListener('click', function () {
-        if (sonidoActivo) {
-            sonidoAmbiente.pause();
-            botonSonido.textContent = 'Activar Sonidos de Ambiente';
-        } else {
-            sonidoAmbiente.volume = 1.0;
-            sonidoAmbiente.play().catch(err => console.error("Error al reproducir:", err));
-            botonSonido.textContent = 'Desactivar Sonidos de Ambiente';
-        }
-        sonidoActivo = !sonidoActivo;
+    const sonido = new Howl({
+        src: ["sonido.mp3"],
+        loop: true,
+        volume: 0.6
     });
+
+    let iniciado = false;
+
+    document.getElementById("paisaje").addEventListener("click", () => {
+
+        if (iniciado) return;
+
+        iniciado = true;
+
+        sonido.play();
+
+        // NUBE
+        gsap.to("#nube", {
+            x: window.innerWidth + 300,
+            duration: 25,
+            repeat: -1,
+            ease: "none"
+        });
+
+        // BICICLETA
+        gsap.to("#bici", {
+            x: window.innerWidth + 300,
+            duration: 15,
+            repeat: -1,
+            ease: "none"
+        });
+
+        // ÁRBOL
+        gsap.to("#arbol", {
+            rotation: 5,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            transformOrigin: "bottom center",
+            ease: "sine.inOut"
+        });
+
+        // SOL
+        gsap.to("#sol", {
+            rotation: 360,
+            duration: 20,
+            repeat: -1,
+            ease: "none",
+            transformOrigin: "center center"
+        });
+
+    });
+
 });
