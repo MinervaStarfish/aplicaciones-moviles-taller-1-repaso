@@ -2,49 +2,21 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Contador de caracteres</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador de Caracteres</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <h1>Contador de Caracteres</h1>
 
-    <div class="contenedor">
-
-        <h1>Contador de caracteres</h1>
-
-        <p>
-
-            Escribe un comentario.
-
-        </p>
-
-        <textarea id="mensaje" placeholder="Escribe aquí...">
-
-</textarea>
-
-        <div class="contador">
-
-            Caracteres:
-
-            <span id="cantidad">
-
-                0
-
-            </span>
-
-        </div>
-
+    <div class="texto-container">
+        <textarea id="entradaTexto" placeholder="Escribe algo aquí..."></textarea>
+        <div id="contador">0 caracteres</div>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>

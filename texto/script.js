@@ -1,9 +1,13 @@
-const mensaje = document.getElementById("mensaje");
+document.addEventListener('DOMContentLoaded', function () {
+  const entradaTexto = document.getElementById('entradaTexto');
+  const contador = document.getElementById('contador');
 
-const cantidad = document.getElementById("cantidad");
+  function actualizarContador() {
+    const texto = entradaTexto.value;
+    const longitud = texto.length;
+    contador.textContent = `${longitud} caracter${longitud !== 1 ? 'es' : ''}`;
+  }
 
-mensaje.addEventListener("input", () => {
-
-    cantidad.textContent = mensaje.value.length;
-
+  entradaTexto.addEventListener('input', actualizarContador);
+  actualizarContador();
 });
