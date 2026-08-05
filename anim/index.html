@@ -2,46 +2,41 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Animación Banco</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animación con Sonido</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <h1>Escena Animada con Sonido</h1>
 
-    <div class="contenedor">
-
-        <h1>🏦 Banco Mariana</h1>
-
-        <p>Animación con GSAP y sonido con Howler.js</p>
-
-        <div id="tarjeta">
-
-            💳
-
-            <h2>Tarjeta Débito</h2>
-
-        </div>
-
-        <button id="animar">
-
-            Iniciar animación
-
-        </button>
-
+    <div id="paisaje">
+        <img id="nube" class="objeto"
+            src="https://icons.iconarchive.com/icons/flaticonmaker/flat-style/128/cloud-icon.png" alt="Nube" />
+        <img id="bici" class="objeto" src="https://icons.iconarchive.com/icons/aha-soft/transport/128/bike-icon.png"
+            alt="Bicicleta" />
+        <img id="arbol" class="objeto"
+            src="https://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/128/22330-deciduous-tree-icon.png"
+            alt="Árbol" />
+        <img id="sol" class="objeto" src="https://icons.iconarchive.com/icons/dapino/beach/128/sun-icon.png"
+            alt="Sol" />
+        <img id="nevado" class="objeto"
+            src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/512/42462-mountain-icon.png"
+            alt="Montaña" />
+        <img id="nevado2" class="objeto"
+            src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/512/42462-mountain-icon.png"
+            alt="Montaña" />
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+    <button id="botonSonido">Activar Sonidos de Ambiente</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <audio id="sonidoAmbiente" loop>
+        <source src="/vid/sendero.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio.
+    </audio>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>

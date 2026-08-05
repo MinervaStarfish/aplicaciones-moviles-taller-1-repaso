@@ -1,41 +1,18 @@
-const sonido = new Howl({
+document.addEventListener('DOMContentLoaded', function () {
+    const botonSonido = document.getElementById('botonSonido');
+    const sonidoAmbiente = document.getElementById('sonidoAmbiente');
 
-    src: ["sonido.mp3"]
+    let sonidoActivo = false;
 
-});
-
-document.getElementById("animar").addEventListener("click", () => {
-
-    sonido.play();
-
-    gsap.fromTo(
-
-        "#tarjeta",
-
-        {
-
-            scale: 0.5,
-
-            rotation: -20,
-
-            opacity: 0
-
-        },
-
-        {
-
-            scale: 1,
-
-            rotation: 360,
-
-            opacity: 1,
-
-            duration: 2,
-
-            ease: "bounce.out"
-
+    botonSonido.addEventListener('click', function () {
+        if (sonidoActivo) {
+            sonidoAmbiente.pause();
+            botonSonido.textContent = 'Activar Sonidos de Ambiente';
+        } else {
+            sonidoAmbiente.volume = 1.0;
+            sonidoAmbiente.play().catch(err => console.error("Error al reproducir:", err));
+            botonSonido.textContent = 'Desactivar Sonidos de Ambiente';
         }
-
-    );
-
+        sonidoActivo = !sonidoActivo;
+    });
 });
