@@ -1,63 +1,85 @@
-window.onload = function () {
-    const passwordInput = document.querySelector('.clave');
-    const teclado = document.getElementById('teclado');
-    const correctPassword = "1234";
+// Contraseña de prueba
+const CONTRASENA_CORRECTA = "1234";
+let claveIngresada = "";
+let numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    // Obtén los valores numéricos
-    const numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+// Referencias a los elementos del DOM
+const inputPassword = document.getElementById('password-input');
+const keypad = document.getElementById('keypad');
+const teclasNumericas = document.querySelectorAll('.num-key');
+const btnBorrar = document.getElementById('btn-borrar');
+const btnConfirmar = document.getElementById('btn-confirmar');
+const mensaje = document.getElementById('message');
 
-    // Función para mezclar el array de números al azar
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
+// Función para mezclar aleatoriamente el array de números
+function mezclarNumeros(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
+}
 
-    // Función que mezcla los números y reconstruye los botones en el HTML
-    function renderTeclado() {
-        // Guarda el botón de borrar para saber dónde insertar los números
-        const borrarBtn = teclado.querySelector('.borrar');
-
-        // Elimina todos los botones numéricos actuales
-        teclado.querySelectorAll('.tecla:not(.borrar):not(.confirmar)').forEach(btn => btn.remove());
-
-        // Mezcla y crea nuevos botones numéricos
-        shuffle(numeros).forEach(num => {
-            const btn = document.createElement('input');
-            btn.type = 'button';
-            btn.value = num;
-            btn.className = 'tecla';
-
-            // Evento para escribir el número en el campo de contraseña
-            btn.addEventListener('click', function () {
-                passwordInput.value += this.value.trim();
-            });
-
-            // Inserta el botón antes del botón "Borrar"
-            teclado.insertBefore(btn, borrarBtn);
-        });
-    }
-
-    // Inicializar el teclado al cargar
-    renderTeclado();
-
-    // Configurar botón Borrar (elimina el último carácter)
-    teclado.querySelector('.borrar').addEventListener('click', function () {
-        passwordInput.value = passwordInput.value.slice(0, -1);
+// Función para asignar los números mezclados a los botones
+function actualizarTeclado() {
+    mezclarNumeros(numeros);
+    teclasNumericas.forEach((boton, index) => {
+        boton.textContent = numeros[index];
+        // Guardamos el valor real en un atributo oculto (dataset)
+        boton.dataset.valor = numeros[index];
     });
+}
 
-    // Configurar botón Confirmar (valida la contraseña)
-    teclado.querySelector('.confirmar').addEventListener('click', function () {
-        if (passwordInput.value === correctPassword) {
-            alert("¡Acceso concedido! Ha ingresado correctamente.");
-            passwordInput.value = "";
-            renderTeclado(); // Vuelve a mezclar por seguridad
-        } else {
-            alert("Contraseña incorrecta. Inténtelo de nuevo.");
-            passwordInput.value = "";
-            renderTeclado(); // Vuelve a mezclar por seguridad
+// 1. Inicializamos el teclado con los números mezclados la primera vez
+actualizarTeclado();
+
+// 2. Cuando el mouse ENTRA al área del teclado, todo se vuelve asteriscos
+keypad.addEventListener('mouseenter', () => {
+    teclasNumericas.forEach(boton => {
+        boton.textContent = '*';
+    });
+});
+
+// 3. Cuando el mouse SALE del área del teclado, los números se mezclan y reaparecen
+keypad.addEventListener('mouseleave', () => {
+    actualizarTeclado();
+});
+
+// 4. Lógica al hacer clic en un número
+teclasNumericas.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        // Evitamos que la clave sea infinita (máximo 4 caracteres)
+        if (claveIngresada.length < 4) {
+            // Leemos el valor real del dataset, no el texto del botón (que podría ser '*')
+            claveIngresada += e.target.dataset.valor;
+            inputPassword.value = '*'.repeat(claveIngresada.length);
+            mensaje.textContent = ""; // Limpiamos mensajes anteriores
         }
     });
-};
+});
+
+// 5. Lógica del botón Borrar
+btnBorrar.addEventListener('click', () => {
+    claveIngresada = claveIngresada.slice(0, -1);
+    inputPassword.value = '*'.repeat(claveIngresada.length);
+    mensaje.textContent = ""; 
+});
+
+// 6. Lógica del botón Confirmar
+btnConfirmar.addEventListener('click', () => {
+    if (claveIngresada === "") {
+        mensaje.textContent = "Por favor, ingresa tu clave.";
+        mensaje.style.color = "#d81b60";
+        return;
+    }
+
+    if (claveIngresada === CONTRASENA_CORRECTA) {
+        mensaje.textContent = "¡Bienvenida! Contraseña correcta 🎀";
+        mensaje.style.color = "#388e3c"; // Verde bonito
+    } else {
+        mensaje.textContent = "Contraseña incorrecta. Intenta de nuevo ❌";
+        mensaje.style.color = "#d32f2f"; // Rojo
+        // Reiniciamos el campo al fallar
+        claveIngresada = "";
+        inputPassword.value = "";
+    }
+});

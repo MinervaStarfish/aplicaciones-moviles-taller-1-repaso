@@ -1,46 +1,115 @@
-#teclado {
-    border: 1px solid grey;
-    width: 200px;
-    height: 340px;
-    text-align: center;
-}
-
-.clave {
-    width: 202px;
-    height: 40px;
-    padding-left: 10px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.tecla {
+body {
+    background: linear-gradient(135deg, #ffe4e1 0%, #ffb6c1 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+    width: 320px;
+    text-align: center;
+    border: 2px solid #ffc0cb;
+}
+
+.header h2 {
+    color: #d81b60;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.header p {
+    color: #f06292;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #f8bbd0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: #fff0f5;
+    color: #c2185b;
+    outline: none;
+    letter-spacing: 5px;
+}
+
+/* Cuadrícula del teclado */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
     cursor: pointer;
-    width: 60px;
-    height: 60px;
-    background: black;
-    color: white;
     border: none;
-    border-radius: 8px;
-    margin-top: 5px;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: all 0.2s ease;
 }
 
-/* Efecto: oculta el número de las teclas (excepto borrar y confirmar) al pasar el cursor */
-.tecla:not(.borrar):not(.confirmar):hover {
-    color: transparent;
-}
-
-.borrar {
-    width: 125px;
-}
-
-.caja_clave {
-    width: 200px;
-    margin: 0 auto;
-}
-
-.confirmar {
-    width: 125px;
-    background: green;
-    margin-top: 5px;
+.num-key {
+    background-color: #f48fb1;
     color: white;
-    /* Color blanco para que se lea mejor */
+    padding: 15px 0;
+    box-shadow: 0 4px 0 #f06292;
+}
+
+.num-key:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #f06292;
+}
+
+/* El botón borrar abarca 2 columnas */
+.action-key {
+    grid-column: span 2;
+    background-color: #ffb74d; /* Un tono naranja pastel que combina bien */
+    color: white;
+    box-shadow: 0 4px 0 #f57c00;
+}
+
+.action-key:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #f57c00;
+}
+
+.confirm-key {
+    width: 100%;
+    background-color: #d81b60;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 #ad1457;
+    margin-bottom: 15px;
+}
+
+.confirm-key:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #ad1457;
+}
+
+#message {
+    font-weight: bold;
+    min-height: 20px; /* Evita que el contenedor salte cuando aparece el texto */
+    font-size: 15px;
 }
