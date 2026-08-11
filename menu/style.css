@@ -1,139 +1,91 @@
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
-    font-family: Segoe UI;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 nav {
-
     position: fixed;
-
     top: 0;
-
     width: 100%;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 20px 60px;
-
-    background: #003366;
-
+    background: linear-gradient(135deg, #f48fb1 0%, #f06292 100%);
     color: white;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    z-index: 1000;
 }
 
 .logo {
-
     font-size: 25px;
-
     font-weight: bold;
-
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 nav ul {
-
     display: flex;
-
     list-style: none;
-
     gap: 30px;
-
 }
 
 nav a {
-
     color: white;
-
     text-decoration: none;
-
     font-weight: bold;
-
-    transition: .3s;
-
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 20px;
 }
 
 nav a:hover {
-
-    color: #ffd54f;
-
+    background: #d81b60;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
 }
 
 section {
-
     height: 100vh;
-
     padding: 130px 80px;
-
+    display: flex;
+    flex-direction: column;
 }
 
-#inicio {
-
-    background: #dbeafe;
-
-}
-
-#cuentas {
-
-    background: #e8f5e9;
-
-}
-
-#pagos {
-
-    background: #fff8e1;
-
-}
-
-#transferencias {
-
-    background: #f3e5f5;
-
-}
-
-#perfil {
-
-    background: #eceff1;
-
-}
+/* Diferentes tonos pasteles rosados para separar cada sección visualmente */
+#inicio { background: #ffe4e1; }
+#cuentas { background: #fff0f5; }
+#pagos { background: #fce4ec; }
+#transferencias { background: #f8bbd0; }
+#perfil { background: #f3e5f5; }
 
 .card {
-
     background: white;
-
     width: 350px;
-
     padding: 30px;
-
-    border-radius: 15px;
-
+    border-radius: 20px;
     margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+    border: 2px solid #ffc0cb;
+    color: #f06292;
+    font-weight: 500;
+    line-height: 1.2;
+}
 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
-
+.card h2 {
+    color: #d81b60;
+    font-size: 32px;
+    margin-top: 10px;
 }
 
 h1 {
-
     margin-bottom: 20px;
-
-    color: #003366;
-
+    color: #d81b60;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
