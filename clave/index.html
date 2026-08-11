@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clave "Bancumbia"</title>
-    <!-- Vincula el CSS en la misma carpeta -->
+    <title>Portal Bancario Femenino</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <section class="caja_clave">
-        <!-- 'readonly' evita que escriban con el teclado físico -->
-        <input type="password" placeholder="Clave acá" class="clave" readonly>
+    <div class="login-container">
+        <div class="header">
+            <h2>Mi Banco 🌸</h2>
+            <p>Ingresa tu clave virtual</p>
+        </div>
+        
+        <input type="password" id="password-input" readonly placeholder="Clave acá">
 
-        <section id="teclado">
-            <input type="button" value="1" class="tecla">
-            <input type="button" value="2" class="tecla">
-            <input type="button" value="3" class="tecla">
-            <input type="button" value="4" class="tecla">
-            <input type="button" value="5" class="tecla">
-            <input type="button" value="6" class="tecla">
-            <input type="button" value="7" class="tecla">
-            <input type="button" value="8" class="tecla">
-            <input type="button" value="9" class="tecla">
-            <input type="button" value="0" class="tecla">
-            <input type="button" value="Borrar" class="tecla borrar">
-            <input type="button" value="Confirmar" class="tecla confirmar">
-        </section>
-    </section>
+        <div id="keypad" class="keypad">
+            <!-- Los 10 botones numéricos -->
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            <button class="num-key"></button>
+            
+            <!-- Botón de borrar que ocupa el espacio restante -->
+            <button id="btn-borrar" class="action-key">Borrar</button>
+        </div>
 
-    <!-- Vincula el JS en la misma carpeta -->
+        <button id="btn-confirmar" class="confirm-key">Confirmar</button>
+
+        <p id="message"></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 </html>
